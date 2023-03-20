@@ -40,7 +40,7 @@ void deviation_function() {
     for (int ii = 0; ii < READ_COUNT; ii++) {
       int diff = 0;
       for (int j = 0; j < READ_COUNT; j++) {
-        diff += abs(readings[i] - readings[j]);  // Izračunaj razliku između dva člana niza
+        diff += abs(readings[ii] - readings[j]);  // Izračunaj razliku između dva člana niza
       }
       if (diff > maxDiff) {
         maxDiffIndex = ii;
