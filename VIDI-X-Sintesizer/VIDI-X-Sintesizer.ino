@@ -45,9 +45,9 @@ XPT2046_Touchscreen ts(TS_CS);
 #define SLIDER_COLOR 0xE79C
 
 // varijable za vrijednosti slidera
-int sliderValue1 = 128; // trajanje tona
+int sliderValue1 = 125; // trajanje tona
 int sliderValue2 = 100; // glasnoća tona (za mali zvučnik oko 200, za slušalice postaviti na 100 ili manje)
-int sliderValue3 = 0; // za ponak frekvencije tona
+int sliderValue3 = 0; // za pomak frekvencije tona
 
 int volume = sliderValue2 * 3; //varijabla glasnoće ovisna o slideru 2
 
@@ -85,7 +85,7 @@ void setup() {
   TFT.setTextSize(2);
   TFT.setCursor(0, 0);
   TFT.println("           VIDI X");
-  TFT.println("         SINTESIZER ");
+  TFT.println("         SYNTHESIZER");
   TFT.setTextSize(1);
   TFT.setTextColor(ILI9341_BLUE);
   TFT.print("==##====#=#====##==##====#=#====##==##====#=#====##==");
@@ -115,8 +115,8 @@ void setup() {
   Serial.println("VIDI X Touch Interrupt Test");
 
   ledcSetup(0, 1000, 8);
-  ledcAttachPin(speakerPin, 0);
-  ledcWrite(0, sliderValue2);
+  ledcAttachPin(speakerPin, 0); //
+  ledcWrite(0, sliderValue2); // postavljamo glasnoću tona
 
   //touchAttachInterrupt(T0, gotTouch0, threshold); //GPIO 4
   //touchAttachInterrupt(T1, gotTouch1, threshold); //GPIO 0
